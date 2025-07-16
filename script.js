@@ -354,11 +354,18 @@ function playerReset() {
     player.pos.x = (arena[0].length / 2 | 0) - (player.matrix[0].length / 2 | 0);
 
     if (collide(arena, player)) {
-        arena.forEach(row => row.fill(0));
-        player.score = 0;
-        alert("Game Over!");
-        updateScore();
-    }
+    showGameOver();
+    return;
+}
+
+function showGameOver() {
+    document.getElementById('gameOverScreen').style.display = 'flex';
+    document.getElementById('finalScore').innerText = 'Score: ' + player.score;
+    document.getElementById('finalHighScore').innerText = 'High Score: ' + highScore;
+    isPaused = true;
+}
+
+
 
     canHold = true;
     drawNext();
