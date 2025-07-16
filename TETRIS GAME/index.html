@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tetris Game</title>
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    
+
+    #score {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .game-container {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    canvas {
+      background: #000;
+      border: 2px solid #444;
+    }
+
+    .next-piece {
+      text-align: center;
+    }
+
+    .next-piece p {
+      margin: 0 0 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tetris</h1>
+  <div id="score">Score: 0</div>
+  <div id="pauseMenu" style="display:none;" class="pause-menu">
+  <h2>⏸️ Paused</h2>
+  <button onclick="togglePause()">▶ Resume</button>
+  <button onclick="restartGame()">🔁 Restart</button>
+  <button onclick="exitGame()">❌ Exit</button>
+</div>
+
+
+
+  <div class="game-container">
+  <canvas id="tetris" width="240" height="400"></canvas>
+  <div class="next-piece">
+    <p>Next Piece</p>
+    <canvas id="next" width="100" height="100"></canvas>
+    <p>Hold Piece</p>
+    <canvas id="hold" width="100" height="100"></canvas>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
